@@ -22,8 +22,10 @@ async function startServer() {
           }
         `,
       resolvers:{
-        
-      }
+          Query:{
+            getToDo: ()=> [ {id:1, title:"omkar", completed:false}]
+          }
+       }
   });
 
   app.use(bodyParser.json());
