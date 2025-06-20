@@ -5,10 +5,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 async function startServer() {
-
   const app = express();
   app.use(express.json());
-
   const server = new ApolloServer({
     typeDefs:`
           type ToDO{ 
@@ -21,11 +19,6 @@ async function startServer() {
               getToDo : [ToDO]
           }
         `,
-      resolvers:{
-          Query:{
-            getToDo: ()=> [ {id:1, title:"omkar", completed:false}]
-          }
-       }
   });
 
   app.use(bodyParser.json());
