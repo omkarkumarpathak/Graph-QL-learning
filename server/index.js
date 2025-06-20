@@ -6,6 +6,7 @@ import cors from "cors";
 import axios from "axios";
 
 async function startServer() {
+  
   const app = express();
   app.use(express.json());
 
